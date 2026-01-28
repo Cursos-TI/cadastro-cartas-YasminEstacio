@@ -1,40 +1,52 @@
 #include <stdio.h>
 
 int main() {
-char Estado[50];
-char Cidade[50];
-char Codigo[50];
-int População;
-float Área;
-float Pib;
-int ponto_turisticos; 
+    char estado[50];
+    char cidade[50];
+    char codigo[10];
+    int populacao;
+    float area;
+    float pib;
+    int pontos_turisticos;
 
-printf("Estado: \n");
-scanf("%s",&Estado);
+    float densidade;
+    float pib_per_capita;
 
-printf("Cidade: \n");
-scanf("%s",&Cidade);
+    printf("Estado: ");
+    scanf("%s", estado);
 
-printf("Codigo: \n");
-scanf("%s",&Codigo);
+    printf("Cidade: ");
+    scanf("%s", cidade);
 
-printf("População: \n");
-scanf("%d",&População);
+    printf("Codigo da carta: ");
+    scanf("%s", codigo);
 
-printf("Digite a Área: \n");
-scanf("%f",&Área);
+    printf("Populacao: ");
+    scanf("%d", &populacao);
 
-printf("Digite o Pib: \n");
-scanf("%f",&Pib);
+    printf("Area (km²): ");
+    scanf("%f", &area);
 
-printf("Digite o Número de pontos turisticos: \n");
-scanf("%d",&ponto_turisticos);
+    printf("PIB: ");
+    scanf("%f", &pib);
 
-printf("Estado: %s\n", Estado);
-printf("Cidade: %s\n", Cidade);
-printf("Codigo: %s\n", Codigo);
-printf("População: %d - Área: %f\n", População, Área);
-printf("Pib: %f - ponto_turisticos: %d\n", Pib, ponto_turisticos);
+    printf("Pontos turisticos: ");
+    scanf("%d", &pontos_turisticos);
 
-return 0;
-} 
+    // Calculos
+    densidade = populacao / area;
+    pib_per_capita = pib / populacao;
+
+    printf("\n--- CARTA SUPER TRUNFO ---\n");
+    printf("Estado: %s\n", estado);
+    printf("Cidade: %s\n", cidade);
+    printf("Codigo: %s\n", codigo);
+    printf("Populacao: %d\n", populacao);
+    printf("Area: %.2f km²\n", area);
+    printf("PIB: %.2f\n", pib);
+    printf("Pontos Turisticos: %d\n", pontos_turisticos);
+    printf("Densidade Populacional: %.2f hab/km²\n", densidade);
+    printf("PIB per capita: %.2f\n", pib_per_capita);
+
+    return 0;
+}
